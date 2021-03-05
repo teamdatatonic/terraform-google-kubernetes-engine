@@ -1,19 +1,3 @@
-# Google Kubernetes Engine (GKE) Terraform Resource Module
-
-This repo contains Terraform resource modules for running Hardened Kuberenetes cluster on Google Cloud Platform built in accordance to [Hardening your cluster's security] (https://cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster).
-
-
-## Usage
-You can go to the examples folder for module usage, the usage of the resource modules could be like this in your own main.tf file:
-
-```hcl
-module "secure_private_cluster" {
-    source  = "teamdatatonic"
-    version = "1.0.0"
-
-}
-```
-
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
