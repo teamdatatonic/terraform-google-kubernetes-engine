@@ -29,6 +29,6 @@ func TestSecurePrivateCluster(t *testing.T) {
 	defer terraform.Destroy(t, terraformOptions)
 	terraform.InitAndApply(t, terraformOptions)
 	gke_output_name := terraform.Output(t, terraformOptions, "cluster_name")
-	gke_output_name_expected := "datatonic-devops-play-gke-example"
+	gke_output_name_expected := project_id + "-gke-example"
 	assert.Equal(t, gke_output_name_expected, gke_output_name)
 }
