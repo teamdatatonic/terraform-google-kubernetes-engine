@@ -4,12 +4,13 @@ variable "project_id" {
 }
 
 variable "region" {
-  description = "Region where the cluster reside."
+  description = "Region where the cluster resides."
   type        = string
 }
 
 variable "gke_config" {
-  description = "map of GKE configs."
+  description = "Maps of GKE configurations."
+  type        = any
 }
 
 variable "node_count" {
@@ -20,11 +21,11 @@ variable "node_count" {
 }
 
 variable "network_name" {
-  description = "(Optional) The name or self_link of the Google Compute Engine network to which the cluster is connected. For Shared VPC, set this to the self link of the shared network."
+  description = "The name of the network being created."
   type        = string
 }
 
 variable "subnet_name" {
-  description = "(Optional) The name or self_link of the Google Compute Engine subnetwork in which the cluster's instances are launched."
+  description = "The list of subnets to be created."
   type        = string
 }

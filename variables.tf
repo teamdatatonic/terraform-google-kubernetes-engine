@@ -1,24 +1,31 @@
 variable "project_id" {
-  description = "The ID of the project where the GKE will be created"
+  description = "The ID of the project where the GKE will be created."
+  type        = string
+}
+
+variable "gke_config" {
+  description = "Maps of GKE configurations."
+  type        = any
 }
 
 variable "region" {
-  type    = string
-  default = "europe-west2"
+  description = "(Optional) The region in  which the cluster master will be created, as well as the node pool location."
+  type        = string
 }
 
 variable "environment_prefix" {
-  type    = string
-  default = "dev"
+  description = "The GCP envioment where the cluster will be created."
+  type        = string
 }
 
 variable "gke_network_name" {
-  type    = string
-  default = "example-usage-vpc"
+  description = "The name of the network being created."
+  type        = string
 }
 
 variable "secure_subnet" {
-  type = any
+  description = "The list of subnets to be created."
+  type        = any
   default = [
     {
       subnet_name   = "secure-subnet-gke",
@@ -31,10 +38,7 @@ variable "secure_subnet" {
 }
 
 variable "routing_mode" {
-  type    = string
-  default = "REGIONAL"
-}
-
-variable "gke_config" {
-
+  description = "The network routing mode (default 'REGIONAL')."
+  type        = string
+  default     = "REGIONAL"
 }

@@ -38,13 +38,12 @@ resource "google_container_cluster" "secure_gke" {
   subnetwork = var.subnet_name
 
   dynamic "database_encryption" {
-    for_each = lookup(var.gke_config, "db_encrypt", true) ? ["default"] : []
+    for_each = lookup(var.gke_config, "db_encrypt", true) ? [1] : []
     content {
       state    = "ENCRYPTED"
-      key_name = google_kms_crypto_key.gke_kms_key.self_link
+      key_name = google_kms_crypto_key.gke_kms_key[0].self_link
     }
   }
-
 
   cluster_telemetry {
     type = "ENABLED"
