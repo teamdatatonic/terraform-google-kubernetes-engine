@@ -127,6 +127,7 @@ resource "google_container_node_pool" "node_pool" {
     service_account = google_service_account.gke_service_account[each.key].email
     preemptible     = lookup(each.value, "preemptible", false)
     tags            = lookup(each.value, "tag_list", [])
+    #checkov:skip=CKV_GCP_22
     image_type      = lookup(each.value, "image_type", "COS")
     local_ssd_count = lookup(each.value, "local_ssd_count", 0)
     disk_size_gb    = lookup(each.value, "disk_size_gb", 100)

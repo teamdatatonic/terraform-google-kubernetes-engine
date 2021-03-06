@@ -3,7 +3,7 @@ image: alpine:latest
 
 variables:
   TF_ROOT: ${CI_PROJECT_DIR}
-  TERRAFORM_VERSION: "0.14.3"
+  TERRAFORM_VERSION: "0.14.5"
   TF_DOCS_VERSION: "v0.10.1"
   TF_IN_AUTOMATION: "TRUE"
   TEST_DIR: "${CI_PROJECT_DIR}/test"

@@ -11,7 +11,7 @@ module "network" {
 
 }
 
-module "secure_private_gke_v2" {
+module "secure_gke" {
   source = "./modules/secure_gke"
 
   project_id   = var.project_id
