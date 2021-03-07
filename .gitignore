@@ -1,0 +1,12 @@
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# service account key file
+key.json
+tfplan.enc.zip
+.envrc
+node_modules
