@@ -19,3 +19,8 @@ output "endpoint" {
   description = "The IP address of this cluster's Kubernetes master."
   value       = module.secure_gke.endpoint
 }
+
+output "node_pool_sa_email" {
+  description = "The node pool service account email."
+  value       = module.secure_gke.node_pool_sa_eamil
+}
