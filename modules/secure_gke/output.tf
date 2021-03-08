@@ -18,7 +18,7 @@ output "endpoint" {
   value       = google_container_cluster.secure_gke.endpoint
 }
 
-output "node_pool_sa_eamil" {
+output "node_pool_sa_email" {
   description = "The node pool service account email."
   value       = [for sa in google_service_account.gke_service_account : sa.email]
 }
