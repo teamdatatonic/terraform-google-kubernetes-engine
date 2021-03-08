@@ -89,6 +89,7 @@ No provider.
 | cluster\_name | The name of the cluster, unique within the project and location. |
 | cluster\_self\_link | The server-defined URL for the GKE resource. |
 | endpoint | The IP address of this cluster's Kubernetes master. |
+| node\_pool\_sa\_eamil | The node pool service account email. |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
