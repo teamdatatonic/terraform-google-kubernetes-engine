@@ -23,9 +23,10 @@ resource "google_container_cluster" "secure_gke" {
 
   private_cluster_config {
     enable_private_endpoint = var.gke_config.enable_private_endpoint
-
+    enable_private_nodes    = var.gke_config.enable_private_nodes
+    master_ipv4_cidr_block  = var.gke_config.enable_private_nodes ? lookup(var.gke_config, "master_ipv4_cidr_block") : null
     master_global_access_config {
-      enabled = var.gke_config.enable_private_nodes
+      enabled = var.gke_config.enable_global_access
     }
   }
 
@@ -104,7 +105,7 @@ resource "google_container_node_pool" "node_pool" {
   initial_node_count = each.value.autoscaling ? lookup(each.value, "min_node_count") : var.node_count
 
   dynamic "autoscaling" {
-    for_each = lookup(each.value, "autoscaling", true) ? [each.value] : []
+    for_each = each.value.autoscaling ? [each.value] : []
     content {
       min_node_count = lookup(autoscaling.value, "min_node_count")
       max_node_count = lookup(autoscaling.value, "max_node_count")
