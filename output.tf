@@ -22,5 +22,5 @@ output "endpoint" {
 
 output "node_pool_sa_email" {
   description = "The node pool service account email."
-  value       = module.secure_gke.node_pool_sa_eamil
+  value       = module.secure_gke.node_pool_sa_email
 }
