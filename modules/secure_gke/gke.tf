@@ -16,7 +16,7 @@ resource "google_container_cluster" "secure_gke" {
 
   name     = "${var.project_id}-${var.gke_config.name_suffix}"
   project  = var.project_id
-  location = var.gke_config.zonal_cluster_enabled ? lookup(var.gke_config, "zone") : var.region
+  location = lookup(var.gke_config, "zonal_cluster_enabled", false) ? lookup(var.gke_config, "zone") : var.region
 
   # Security
   enable_binary_authorization = true
@@ -96,7 +96,7 @@ resource "google_container_node_pool" "node_pool" {
 
   name     = each.key
   project  = var.project_id
-  location = var.gke_config.zonal_cluster_enabled ? lookup(var.gke_config, "zone") : var.region
+  location = lookup(var.gke_config, "zonal_cluster_enabled", false) ? lookup(var.gke_config, "zone") : var.region
   cluster  = google_container_cluster.secure_gke.name
 
   max_pods_per_node = lookup(each.value, "max_pods_per_node", 110)
