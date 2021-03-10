@@ -4,20 +4,13 @@ variable "project_id" {
 }
 
 variable "region" {
-  description = "Region where the cluster resides."
+  description = "Region where the resources will be created."
   type        = string
 }
 
 variable "gke_config" {
   description = "Maps of GKE configurations."
   type        = any
-}
-
-variable "node_count" {
-  description = "(Optional) The number of nodes per instance group."
-  type        = number
-  default     = 3
-
 }
 
 variable "network_name" {

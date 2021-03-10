@@ -1,31 +1,25 @@
-## Private Google kubernetes Engine 
-
+## Sandbox GKE Cluster - Example Usage 
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
-| Name | Version |
-|------|---------|
-| terraform | >= 0.14.5 |
-| google | ~> 3.55 |
-| google-beta | ~> 3.55 |
+No requirements.
 
 ## Providers
 
-| Name | Version |
-|------|---------|
-| google | ~> 3.55 |
-| google-beta | ~> 3.55 |
+No provider.
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| environment\_prefix | The GCP envioment where the cluster will be created. | `string` | `"dev"` | no |
 | gke\_config | Maps of GKE configurations. | `any` | n/a | yes |
-| network\_name | The name of the network being created. | `string` | n/a | yes |
+| gke\_network\_name | The name of the network being created. | `string` | n/a | yes |
 | project\_id | The ID of the project where the GKE will be created. | `string` | n/a | yes |
-| region | Region where the resources will be created. | `string` | n/a | yes |
-| subnet\_name | The list of subnets to be created. | `string` | n/a | yes |
+| region | (Optional) The region in  which the resources will be created. | `string` | `"europe-west2"` | no |
+| routing\_mode | The network routing mode (default 'REGIONAL'). | `string` | `"REGIONAL"` | no |
+| subnets | The list of subnets to be created. | `any` | n/a | yes |
 
 ## Outputs
 
