@@ -23,9 +23,8 @@
 |------|-------------|------|---------|:--------:|
 | gke\_config | Maps of GKE configurations. | `any` | n/a | yes |
 | network\_name | The name of the network being created. | `string` | n/a | yes |
-| node\_count | (Optional) The number of nodes per instance group. | `number` | `3` | no |
 | project\_id | The ID of the project where the GKE will be created. | `string` | n/a | yes |
-| region | Region where the cluster resides. | `string` | n/a | yes |
+| region | Region where the resources will be created. | `string` | n/a | yes |
 | subnet\_name | The list of subnets to be created. | `string` | n/a | yes |
 
 ## Outputs

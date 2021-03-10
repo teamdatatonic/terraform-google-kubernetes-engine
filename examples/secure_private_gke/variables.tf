@@ -1,10 +1,10 @@
 variable "project_id" {
-  description = "The ID of the project where the GKE will be created"
+  description = "The ID of the project where the GKE will be created."
   type        = string
 }
 
 variable "region" {
-  description = "(Optional) The region in  which the cluster master will be created, as well as the node pool location."
+  description = "(Optional) The region in  which the resources will be created."
   type        = string
   default     = "europe-west2"
 }
