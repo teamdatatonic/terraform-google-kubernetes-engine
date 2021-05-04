@@ -14,9 +14,10 @@ module "network" {
 module "secure_gke" {
   source = "../../modules/secure_gke"
 
-  project_id   = var.project_id
-  region       = var.region
-  gke_config   = var.gke_config
-  network_name = module.network.network_self_link
-  subnet_name  = module.network.subnets_names[0]
+  project_id      = var.project_id
+  region          = var.region
+  gke_config      = var.gke_config
+  gke_project_iam = var.gke_project_iam
+  network_name    = module.network.network_self_link
+  subnet_name     = module.network.subnets_names[0]
 }

@@ -8,9 +8,14 @@ resource "google_container_cluster" "secure_gke" {
 
   #TODO: Setup master auth and certs
   #checkov:skip=CKV_GCP_19
-  #checkov:skip=CKV_GCP_20
   #checkov:skip=CKV_GCP_13
+  #checkov:skip=CKV_GCP_20
 
+  #checkov:skip=CKV_GCP_61
+  #checkov:skip=CKV_GCP_65
+  #checkov:skip=CKV_GCP_67
+  #checkov:skip=CKV_GCP_69
+  #checkov:skip=CKV_GCP_71
 
   provider = google-beta
 
@@ -93,6 +98,9 @@ resource "google_container_cluster" "secure_gke" {
 
 resource "google_container_node_pool" "node_pool" {
   for_each = lookup(var.gke_config, "node_pool_config", {})
+
+  #checkov:skip=CKV_GCP_68
+  #checkov:skip=CKV_GCP_69
 
   name     = each.key
   project  = var.project_id

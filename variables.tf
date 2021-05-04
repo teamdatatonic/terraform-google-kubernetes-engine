@@ -42,3 +42,9 @@ variable "routing_mode" {
   type        = string
   default     = "REGIONAL"
 }
+
+variable "gke_project_iam" {
+  description = "The list of roles to assign to the gke service account."
+  type        = list(string)
+  default     = null
+}

@@ -46,3 +46,9 @@ variable "gke_config" {
   type        = any
 
 }
+
+variable "gke_project_iam" {
+  description = "The list of roles to assign to the gke service account."
+  type        = list(string)
+  default     = null
+}
