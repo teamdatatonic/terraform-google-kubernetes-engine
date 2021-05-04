@@ -18,6 +18,7 @@ No provider.
 | environment\_prefix | The GCP envioment where the cluster will be created. | `string` | `"dev"` | no |
 | gke\_config | Maps of GKE configurations. | `any` | n/a | yes |
 | gke\_network\_name | The name of the network being created. | `string` | `"example-usage-vpc"` | no |
+| gke\_project\_iam | The list of roles to assign to the gke service account. | `list(string)` | `null` | no |
 | project\_id | The ID of the project where the GKE will be created | `string` | n/a | yes |
 | region | (Optional) The region in  which the cluster master will be created, as well as the node pool location. | `string` | `"europe-west2"` | no |
 | routing\_mode | The network routing mode (default 'REGIONAL'). | `string` | `"REGIONAL"` | no |

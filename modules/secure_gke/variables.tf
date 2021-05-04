@@ -22,3 +22,9 @@ variable "subnet_name" {
   description = "The list of subnets to be created."
   type        = string
 }
+
+variable "gke_project_iam" {
+  description = "The list of roles to assign to the gke service account."
+  type        = list(string)
+  default     = null
+}

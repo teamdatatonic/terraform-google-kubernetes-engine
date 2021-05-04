@@ -22,6 +22,7 @@
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | gke\_config | Maps of GKE configurations. | `any` | n/a | yes |
+| gke\_project\_iam | The list of roles to assign to the gke service account. | `list(string)` | `null` | no |
 | network\_name | The name of the network being created. | `string` | n/a | yes |
 | project\_id | The ID of the project where the GKE will be created. | `string` | n/a | yes |
 | region | Region where the resources will be created. | `string` | n/a | yes |
