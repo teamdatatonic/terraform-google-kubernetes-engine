@@ -7,12 +7,14 @@ resource "google_container_cluster" "secure_gke" {
   #checkov:skip=CKV_GCP_23:Skipping as this test is failing. Setting `networking_mode` to VPC_NATIVE enables IP aliasing
 
   #TODO: Setup master auth and certs
+  #checkov:skip=CKV_GCP_12
   #checkov:skip=CKV_GCP_19
   #checkov:skip=CKV_GCP_13
   #checkov:skip=CKV_GCP_20
 
   #checkov:skip=CKV_GCP_61
   #checkov:skip=CKV_GCP_65
+  #checkov:skip=CKV_GCP_66
   #checkov:skip=CKV_GCP_67
   #checkov:skip=CKV_GCP_69
   #checkov:skip=CKV_GCP_71
