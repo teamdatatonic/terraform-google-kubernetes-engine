@@ -141,6 +141,8 @@ resource "google_container_node_pool" "node_pool" {
     local_ssd_count = lookup(each.value, "local_ssd_count", 0)
     disk_size_gb    = lookup(each.value, "disk_size_gb", 100)
     labels          = lookup(each.value, "labels", null)
+
+    oauth_scopes = lookup(each.value, "oauth_scope", ["https://www.googleapis.com/auth/cloud-platform"])
   }
 
   dynamic "timeouts" {
